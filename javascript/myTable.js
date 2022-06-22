@@ -2,8 +2,6 @@ class myTable {
     fromUrl(url) {
         let json_string = UrlFetchApp.fetch(url).getContentText();
         let json = JSON.parse(json_string);
-        //this.head = Object.keys(json[0]);
-        //this.data = json.map(e => this.head.map(f => e[f]));
         return this.fromObject(json);
     }
     fromSheet(sheet_name = 'Sheet1') {
