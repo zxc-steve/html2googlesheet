@@ -2,8 +2,6 @@ class myTable {
     fromUrl(url) {
         let json_string = UrlFetchApp.fetch(url).getContentText();
         let json = JSON.parse(json_string);
-        //this.head = Object.keys(json[0]);
-        //this.data = json.map(e => this.head.map(f => e[f]));
         return this.fromObject(json);
     }
     fromSheet(sheet_name = 'Sheet1') {
@@ -111,44 +109,5 @@ getGoogleSheet = async() => {
     console.log(b);
 };
 getGoogleSheet();
-/* All the fetch fail ! CANNOT set headers !
-fetch(url, {
-    method: 'POST', //*GET, POST, PUT, DELETE, etc.
-    mode: 'no-cors', // no-cors, *cors, same-origin
-    headers: {
-        'Content-Type': 'application/json',
-    },
-})
-    .then(response => response.json())
-    .then(data => console.log(data));
-    */
-/*
-fetch(url, {
-    method: 'POST', //*GET, POST, PUT, DELETE, etc.
-    mode: 'no-cors', // no-cors, *cors, same-origin
-    headers: {
-        'Content-Type': 'text/plain',
-    },
-    body: JSON.stringify(t3.toObject()),
-})
-    .then(response => response.text())
-    .then(data => console.log(data));
-*/
-/*
-fetch(url, {
-    method: 'POST', //*GET, POST, PUT, DELETE, etc.
-    mode: 'no-cors', // no-cors, *cors, same-origin
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(t3.toObject()),
-})
-    .then(response => response.json())
-    .then(data => console.log(data));
-*/
-/* // simple HTTP get
-  a=await fetch(url);
-  b=await a.json();
-  console.log(b.json);
- * */
+
 
